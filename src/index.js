@@ -1,5 +1,3 @@
-//TODO: Add some sass file and try to watch changes + compile him
-
 import "./sass/main.sass";
 
 function component() {
