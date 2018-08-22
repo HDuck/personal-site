@@ -8,13 +8,13 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: './js/main.js'
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[id].css'
+            filename: './css/[name].css',
+            chunkFilename: './css/[id].css'
         }),
         new HtmlWebpackPlugin()
     ],
