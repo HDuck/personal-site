@@ -12,21 +12,35 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            title: 'Webpack app',
+            template: './src/index.pug',
+        }),
         new MiniCssExtractPlugin({
             filename: './css/[name].css',
             chunkFilename: './css/[id].css'
-        }),
-        new HtmlWebpackPlugin()
+        })
     ],
     module: {
-        rules: [{
+        rules: [
+            {
+                test: /\.pug$/,
+                use: [{
+                    loader: "pug-loader",
+                    options: {
+                        pretty: true
+                    }
+                }]
+            },
+            {
                 test: /\.s[ca]ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                 ]
-        }]
+            }
+        ]
     },
     watch: false,
 };
