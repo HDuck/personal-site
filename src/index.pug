@@ -1,3 +1,27 @@
+-
+    var menuList = [
+        {
+            name: 'Главная',
+            link: '#'
+        },
+        {
+            name: 'Резюме',
+            link: '#'
+        },
+        {
+            name: 'Портфолио',
+            link: '#'
+        },
+        {
+            name: 'Предложения',
+            link: '#'
+        }
+    ]
+
+mixin menuItem(href, name)
+    li.menu__item
+        a.menu__link(href=href)= name
+
 doctype html
 html(lang="en")
     head
@@ -8,14 +32,8 @@ html(lang="en")
         header.header
             nav.menu
                 ul.menu__list
-                    li.menu__item
-                        a.menu__link(href="#") Home
-                    li.menu__item
-                        a.menu__link(href="#") Resume
-                    li.menu__item
-                        a.menu__link(href="#") Portfolio
-                    li.menu__item
-                        a.menu__link(href="#") Contact
+                    each item in menuList
+                        +menuItem(item.link, item.name)
         main.content
             section.greet-slide
                 h1 Hello there, fella!
