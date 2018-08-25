@@ -1,0 +1,29 @@
+-
+    var menuList = [
+        {
+            name: 'Главная',
+            link: '#'
+        },
+        {
+            name: 'Резюме',
+            link: '#'
+        },
+        {
+            name: 'Портфолио',
+            link: '#'
+        },
+        {
+            name: 'Контакты',
+            link: '#'
+        }
+    ]
+
+include mixins.pug
+
+doctype html
+html(lang="en")
+    include head.pug
+    body
+        include header.pug
+        main.content
+            include cont-greeting.pug

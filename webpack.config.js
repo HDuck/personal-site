@@ -14,7 +14,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Webpack app',
-            template: './src/index.pug',
+            template: './src/pug/main.pug',
         }),
         new MiniCssExtractPlugin({
             filename: './css/[name].css',
