@@ -12,6 +12,14 @@
         }
     ];
 
+    var expList = [
+        {
+            organization: 'Место для названия вашей организации',
+            duration: 'Могу начать прямо здесь и сейчас',
+            description: 'На текущий момент не имею опыта работы, которым мог бы похвастаться. Возможно именно вы можете стать моим первым работодателем. Готов к труду и обороне!'
+        }
+    ]
+
 section.resume-slide
     h2.slide__head Резюме
     .slide__cont
@@ -32,3 +40,7 @@ section.resume-slide
             h2.resume__head Образование
             each item in eduList
                 +resumeItem(item.institution, item.duration, item.description)
+        section.resume-experience
+            h2.resume__head Опыт работы
+            each item in expList
+                +resumeItem(item.organization, item.duration, item.description)
