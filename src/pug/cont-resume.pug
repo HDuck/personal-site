@@ -1,3 +1,17 @@
+-
+    var eduList = [
+        {
+            institution: 'ФГАОУ ВО &laquo;УрФУ имени первого Президента России Б.Н.Ельцина&raquo;',
+            duration: 'Сентябрь, 2010 - Июль, 2015',
+            description: 'Высшее образование в области конструирования высоковольтных электронных и электрических аппаратов.'
+        },
+        {
+            institution: 'geekbrains.com',
+            duration: 'Апрель, 2016 - Текущее время',
+            description: 'Онлайн курсы по HTML5&CSS3, JS, Базы данных, PHP. На текущий момент изучаю базы данных и серверное программирование на PHP.'
+        }
+    ];
+
 section.resume-slide
     h2.slide__head Резюме
     .slide__cont
@@ -5,7 +19,7 @@ section.resume-slide
             h2.person-name Анатолий Бобров
             span.person-spec Начинающий фронтэнд разработчик
             span.person-loc Москва, Россия
-            img.person-photo.(src="https://via.placeholder.com/200x400" alt="Фотография" title="Начинающий фронтэндер" width="200px" height="300px")
+            img.person-photo(src="https://via.placeholder.com/200x400" alt="Фотография" title="Начинающий фронтэндер" width="200px" height="300px")
         section.resume-profile
             h2.resume__head Профиль
             p.resume__text.
@@ -14,3 +28,7 @@ section.resume-slide
                 chamber sent peering the shore ease from nightly devil,
                 radiant or the thereis token whether,
                 of for lenore some name. Lore upon i.
+        section.resume-education
+            h2.resume__head Образование
+            each item in eduList
+                +resumeItem(item.institution, item.duration, item.description)

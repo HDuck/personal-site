@@ -1,3 +1,9 @@
 mixin menuItem(href, name)
     li.menu__item
         a.menu__link(href=href)= name
+
+mixin resumeItem(head, dur, text)
+    section.resume-item
+        h3.resume-item__head!= head
+        span.resume-item__dur!= dur
+        p.resume-item__text!= text
