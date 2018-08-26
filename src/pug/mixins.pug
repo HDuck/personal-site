@@ -7,3 +7,15 @@ mixin resumeItem(head, dur, text)
         h3.resume-item__head!= head
         span.resume-item__dur!= dur
         p.resume-item__text!= text
+
+mixin progressBar(skName, skVal)
+    .skill-item
+        span.skill-item__name= skName
+        progress.skill-item__prog(max="100" value=skVal)
+            .skill-item__prog-bar
+                span.skill-item__perc= skVal + '%'
+
+mixin otherSkills(skName, skDesc)
+    .skill-item
+        span.skill-item__name= skName
+        p.skill-item__desc!= skDesc

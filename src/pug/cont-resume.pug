@@ -18,6 +18,48 @@
             duration: 'Могу начать прямо здесь и сейчас',
             description: 'На текущий момент не имею опыта работы, которым мог бы похвастаться. Возможно именно вы можете стать моим первым работодателем. Готов к труду и обороне!'
         }
+    ];
+
+    var mainSkills = [
+        {
+            name: 'HTML5',
+            value: 85
+        },
+        {
+            name: 'CSS3',
+            value: 80
+        },
+        {
+            name: 'JS',
+            value: 40
+        },
+        {
+            name: 'JQuery',
+            value: 35
+        }
+    ];
+
+    var otherSkills = [
+        {
+            name: 'Sass/Scss, Less',
+            description: 'Умею в миксины, синтаксис, функции. <b>Уровень: Уверенный</b>.'
+        },
+        {
+            name: 'Pug.js',
+            description: 'Умею в миксины, синтаксис и циклы. <b>Уровень: Начинающий++</b>.'
+        },
+        {
+            name: 'Grunt.js',
+            description: 'Умею в сборку проекта, минификации html/css/js/img/svg, создание svg-спрайтов, проверку валидности html/css. <b>Уровень: Начинающий++</b>.'
+        },
+        {
+            name: 'Webpack.js',
+            description: 'Умею в создание html по собственному шаблону, использование загрузчиков и плагинов. <b>Уровень: Начинающий</b>.'
+        },
+        {
+            name: 'Node.js',
+            description: 'Умею в установку пакетов. <b>Уровень: Начинающий-</b>.'
+        },
     ]
 
 article.resume-slide
@@ -54,3 +96,11 @@ article.resume-slide
                 <span class="birth-head">Дата / Место рождения</span>
                 16/03/1993
                 Качканар, Россия
+        section.resume-skills
+            h2.resume__head Навыки
+            .main-skills
+                each item in mainSkills
+                    +progressBar(item.name, item.value)
+            .other-skills
+                each item in otherSkills
+                    +otherSkills(item.name, item.description)
