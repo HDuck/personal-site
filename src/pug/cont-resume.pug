@@ -20,7 +20,7 @@
         }
     ]
 
-section.resume-slide
+article.resume-slide
     h2.slide__head Резюме
     .slide__cont
         section.resume-person
@@ -44,3 +44,13 @@ section.resume-slide
             h2.resume__head Опыт работы
             each item in expList
                 +resumeItem(item.organization, item.duration, item.description)
+        section.resume-details
+            h2.resume__head Подробнее
+            address.details-contacts
+                span.details-loc м.Пролетарская, м.Крестьянская застава, м.Волгоградский проспект, г.Москва, Россия
+                span.details-tel +7(926)69-52-475
+                a.details-email(href="mailto:anatoleybobrov@gmail.com") AnatoleyBobrov@gmail.com
+            p.details-birth.
+                <span class="birth-head">Дата / Место рождения</span>
+                16/03/1993
+                Качканар, Россия
