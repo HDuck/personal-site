@@ -73,6 +73,12 @@
         }
     ];
 
+    var hobbies = [
+        'Видеоигры',
+        'Программирование',
+        'Фитнес'
+    ];
+
 article.resume-slide
     h2.slide__head Резюме
     .slide__cont
@@ -120,8 +126,13 @@ article.resume-slide
             each item, idx in languages
                 +progressBar(item.name, item.value)
                 - if (idx === 1)
-                    span
+                    span.languages-desc
                         | Умею в чтение технической документации,
                         | составление простых предложений.
                         | Сложности возникают при выборе правильного времени в заданном контексте.
                         | Подтягиваю свои знания на Englishdom.com.
+        section.resume-hobbies
+            h2.resume__head Увлечения
+            ul.hobbies-list
+                each item in hobbies
+                    li= item
