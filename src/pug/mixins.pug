@@ -8,12 +8,12 @@ mixin resumeItem(head, dur, text)
         span.resume-item__dur!= dur
         p.resume-item__text!= text
 
-mixin progressBar(skName, skVal)
-    .skill-item
-        span.skill-item__name= skName
-        progress.skill-item__prog(max="100" value=skVal)
-            .skill-item__prog-bar
-                span.skill-item__perc= skVal + '%'
+mixin progressBar(name, val)
+    .progress
+        span.progress__name= name
+        progress.progress__bar_html5(max="100" value=val)
+            .progress__bar_html
+                span.progress__perc= val + '%'
 
 mixin otherSkills(skName, skDesc)
     .skill-item
