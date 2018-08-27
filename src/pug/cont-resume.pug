@@ -62,6 +62,17 @@
         }
     ];
 
+    var languages = [
+        {
+            name: 'Русский',
+            value: 85
+        },
+        {
+            name: 'Английский',
+            value: 50
+        }
+    ];
+
 article.resume-slide
     h2.slide__head Резюме
     .slide__cont
@@ -104,3 +115,13 @@ article.resume-slide
             .other-skills
                 each item in otherSkills
                     +otherSkills(item.name, item.description)
+        section.resume-languages
+            h2.resume__head Языки
+            each item, idx in languages
+                +progressBar(item.name, item.value)
+                - if (idx === 1)
+                    span
+                        | Умею в чтение технической документации,
+                        | составление простых предложений.
+                        | Сложности возникают при выборе правильного времени в заданном контексте.
+                        | Подтягиваю свои знания на Englishdom.com.
