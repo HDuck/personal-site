@@ -42,5 +42,8 @@ module.exports = {
             }
         ]
     },
-    watch: false,
+    watch: true,
+    watchOptions: {
+        ignored: /node_modules/
+    }
 };
