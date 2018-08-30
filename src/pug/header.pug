@@ -20,6 +20,6 @@
 
 header.header
             nav.menu
-                ul.menu__list
+                ul.menu-list
                     each item in menuList
-                        +menuItem(item.link, item.name)
+                        +listItem(item.link, item.name, 'menu-list')
