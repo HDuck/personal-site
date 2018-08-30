@@ -13,7 +13,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Webpack app',
+            title: 'Anatoliy Bobrov',
             template: './src/pug/main.pug',
         }),
         new MiniCssExtractPlugin({
