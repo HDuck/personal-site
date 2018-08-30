@@ -2,6 +2,10 @@ mixin menuItem(href, name)
     li.menu__item
         a.menu__link(href=href)= name
 
+mixin listItem(link, name, className)
+    li(class=className + '__item')
+        a(class=className + '__link' href=link)= name
+
 mixin resumeItem(head, dur, text)
     section.resume-item
         h3.resume-item__head!= head
@@ -19,3 +23,12 @@ mixin otherSkills(skName, skDesc)
     .skill-item
         span.skill-item__name= skName
         p.skill-item__desc!= skDesc
+
+mixin project(prName, prTech)
+    article.portfolio-project
+        h3.project__name= prName
+        if typeof prTech === 'string'
+            span.project__tech= prTech
+        else
+            span.project__tech= prTech.join(' + ')
+        button.project__info Подробнее

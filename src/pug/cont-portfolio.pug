@@ -1,0 +1,36 @@
+-
+    var techItems = ['Все', 'Верстка', 'JavaScript'];
+    
+    var projects = [
+        {
+            name: 'Макет интернет магазина',
+            technologies: 'Верстка'
+        },
+        {
+            name: 'Макет лендинга',
+            technologies: 'Верстка'
+        },
+        {
+            name: 'Макет сайта портфолио',
+            technologies: ['Верстка', 'JavaScript (чуть-чуть)']
+        },
+        {
+            name: 'Интерфейс приложения Яндекс Дом',
+            technologies: ['Верстка', 'JavaScript']
+        },
+        {
+            name: 'Алгоритм работы умного дома',
+            technologies: 'JavaScript'
+        }
+    ];
+
+section.portfolio-slide
+    h2.slide__head Портфолио
+    .slide__cont
+        ul.tech-list
+            each item in techItems
+                +listItem('#', item, 'tech-list')
+        each item in projects
+            +project(item.name, item.technologies)
+        if projects.length > 6
+            button.load-projs Показать еще
