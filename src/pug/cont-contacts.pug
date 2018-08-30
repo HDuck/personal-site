@@ -1,0 +1,34 @@
+-
+    var socials = [
+        {
+            name: 'ВКонтакте',
+            link: '#'
+        },
+        {
+            name: 'Telegram',
+            link: '#'
+        },
+        {
+            name: 'Github',
+            link: '#'
+        }
+    ];
+
+section.contacts-slide
+    h2.slide__head Контакты
+    .slide__cont
+        p.contact-msg
+            | Открыт для предложений о работе, интересных идей,
+            | сложных задач и вопросов. Вы можете связаться со мной 
+            | любым из предоставленных ниже способов.
+        form.contact-form(action="#")
+            label.form__label(for="name") Как мне к вам обращаться?
+            input.form__name(type="text" name="name" id="name")
+            label.form__label(for="email") Обязательно отвечу на почту.
+            input.form__email(type="email" name="email" id="email")
+            label.form__label(for="message") Что желаете поведать?
+            textarea.form__msg(name="message" id="message")
+            input.form__submit(type="submit" value="Отправить")
+        .contact-socials
+        each item in socials
+            a.socials-link(href=item.link title=item.name)
