@@ -30,5 +30,5 @@ section.contacts-slide
             textarea.form__msg(name="message" id="message")
             input.form__submit(type="submit" value="Отправить")
         .contact-socials
-        each item in socials
-            a.socials-link(href=item.link title=item.name)
+            each item in socials
+                a.socials-link(href=item.link title=item.name)= item.name
