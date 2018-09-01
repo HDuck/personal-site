@@ -1,0 +1,38 @@
+/* Header */
+
+// TODO: Add normal color scheme, transitions, some awesome animation
+
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 2
+    background-color: transparent
+
+.menu
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+    &-list
+        display: flex
+        justify-content: space-around
+        align-items: center
+        width: $h-menu-w
+        margin: $h-menu-list-m
+        padding-left: 0
+
+        &__item
+            display: inline-block
+            list-style-type: none
+
+        &__link
+            padding: $h-menu-link-p
+            text-decoration: none
+            color: txtColor(black)
+            background-color: bgColor(lgray)
+
+            &:hover
+                padding-bottom: $h-menu-link-pb_hov
+                border-bottom: 2px solid bgColor(gray)

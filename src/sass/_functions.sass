@@ -1,0 +1,15 @@
+// Method for output background color
+@function bgColor($key)
+  @if map-has-key($bg-colors, $key)
+    @return map-get($bg-colors, $key)
+
+  @warn "Unknown `#{$key}` in $bg-colors."
+  @return null
+
+// Method for output text color
+@function txtColor($key)
+  @if map-has-key($text-colors, $key)
+    @return map-get($text-colors, $key)
+
+  @warn "Unknown `#{$key}` in $colors."
+  @return null
