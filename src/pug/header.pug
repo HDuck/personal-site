@@ -18,8 +18,7 @@
         }
     ]
 
-header.header
-            nav.menu
-                ul.menu-list
-                    each item in menuList
-                        +listItem(item.link, item.name, 'menu-list')
+nav.menu
+    ul.menu-list
+        each item in menuList
+            +listItem(item.link, item.name, 'menu-list')

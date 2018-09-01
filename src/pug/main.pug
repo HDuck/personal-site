@@ -4,10 +4,12 @@ doctype html
 html(lang="en")
     include head.pug
     body
-        include header.pug
+        header.header
+            include header.pug
         main.content
             include cont-greeting.pug
             include cont-resume.pug
             include cont-portfolio.pug
             include cont-contacts.pug
-        include footer.pug
+        footer.footer
+            include footer.pug
