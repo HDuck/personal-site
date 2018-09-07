@@ -1,18 +1,8 @@
-// Style blocks
-%firs-head
-    font-size: 2.22em
-
-%sec-head
-    font-size: 2em
-
-%slide-text
-    font-size: 1.625em
-
 // Text colors
 $text-colors: (black: black, yellow: yellow)
 
 // Background colors
-$bg-colors: (gray: gray, lgray: lighten(gray, 10))
+$bg-colors: (gray: gray, lgray: lighten(gray, 10), resume: lighten(green, 50))
 
 // Header vars
 // m - for margin
@@ -27,5 +17,23 @@ $h-menu-link-pb_hov: 8px
 
 // Container vars
 $c-slide-head-mb: .5em
+$c-slide-head-mt: $c-slide-head-mb * 2
 
 // Greeting slide
+
+
+// Style blocks
+%firs-head
+    font-size: 2.22em
+
+%sec-head
+    margin: $c-slide-head-mt 0 $c-slide-head-mb
+    font-size: 2em
+    text-align: center
+
+%thir-head
+    font-size: 1.875em
+    margin: 1em 0 .5em 1em
+
+%slide-text
+    font-size: 1.625em

@@ -17,9 +17,11 @@
     height: 100vh
     background: txtColor(gray) url(https://via.placeholder.com/1920x1080) no-repeat center/cover
 
+    & .slide__head
+        order: 1
+        margin-top: 0
+
 .slide__head
-    order: 1
-    margin-bottom: $c-slide-head-mb
     @extend %sec-head
 
 .greeting
@@ -35,3 +37,53 @@
         order: 3
         @extend %slide-text
         text-align: center
+
+/* Resume slide */
+
+.resume
+
+    &-slide
+        width: 75%
+        background-color: bgColor(resume)
+
+    &-cont
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+
+    &-person, &-profile, &-education, &-experience, &-details, &-skills, &-languages, &-hobbies
+        width: 70%
+
+    &-person
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        flex-wrap: wrap
+        align-content: center
+        height: 200px
+
+    &-person &__head
+        margin-top: 0
+        order: 2
+
+    &__head
+        @extend %thir-head
+
+.person
+
+    &-spec, &-loc
+        @extend %slide-text
+
+    &-spec
+        order: 3
+
+    &-loc
+        order: 4
+
+    &-photo
+        order: 1
+        height: 100%
+        margin-right: 8%
+        border-radius: 50%

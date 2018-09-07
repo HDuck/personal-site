@@ -81,14 +81,14 @@
 
 article.resume-slide
     h2.slide__head Резюме
-    .slide__cont
+    .resume-cont
         section.resume-person
-            h2.person-name Анатолий Бобров
+            h3.resume__head Анатолий Бобров
             span.person-spec Начинающий фронтенд разработчик
             span.person-loc Москва, Россия
-            img.person-photo(src="https://via.placeholder.com/200x400" alt="Фотография" title="Начинающий фронтендер" width="200px" height="300px")
+            img.person-photo(src="https://via.placeholder.com/200x200" alt="Фотография" title="Начинающий фронтендер" width="200px" height="200px")
         section.resume-profile
-            h2.resume__head Профиль
+            h3.resume__head Профиль
             p.resume__text.
                 That raven floor uncertain ever lies then mefilled grave thy shore.
                 And back this seraphim evilprophet is,
@@ -96,15 +96,15 @@ article.resume-slide
                 radiant or the thereis token whether,
                 of for lenore some name. Lore upon i.
         section.resume-education
-            h2.resume__head Образование
+            h3.resume__head Образование
             each item in eduList
                 +resumeItem(item.institution, item.duration, item.description)
         section.resume-experience
-            h2.resume__head Опыт работы
+            h3.resume__head Опыт работы
             each item in expList
                 +resumeItem(item.organization, item.duration, item.description)
         section.resume-details
-            h2.resume__head Подробнее
+            h3.resume__head Подробнее
             address.details-contacts
                 span.details-loc м.Пролетарская, м.Крестьянская застава, м.Волгоградский проспект, г.Москва, Россия
                 span.details-tel +7(926)69-52-475
@@ -114,7 +114,7 @@ article.resume-slide
                 16/03/1993
                 Качканар, Россия
         section.resume-skills
-            h2.resume__head Навыки
+            h3.resume__head Навыки
             .main-skills
                 each item in mainSkills
                     +progressBar(item.name, item.value)
@@ -122,7 +122,7 @@ article.resume-slide
                 each item in otherSkills
                     +otherSkills(item.name, item.description)
         section.resume-languages
-            h2.resume__head Языки
+            h3.resume__head Языки
             each item, idx in languages
                 +progressBar(item.name, item.value)
                 - if (idx === 1)
@@ -132,7 +132,7 @@ article.resume-slide
                         | Сложности возникают при выборе правильного времени в заданном контексте.
                         | Подтягиваю свои знания на Englishdom.com.
         section.resume-hobbies
-            h2.resume__head Увлечения
+            h3.resume__head Увлечения
             ul.hobbies-list
                 each item in hobbies
                     li= item
