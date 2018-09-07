@@ -43,7 +43,7 @@
 .resume
 
     &-slide
-        width: 75%
+        width: $res-width
         background-color: bgColor(resume)
 
     &-cont
@@ -53,7 +53,7 @@
         align-items: center
 
     &-person, &-profile, &-education, &-experience, &-details, &-skills, &-languages, &-hobbies
-        width: 70%
+        width: $res-sec-width
 
     &-person
         display: flex
@@ -71,6 +71,13 @@
     &__head
         @extend %thir-head
 
+    &__text
+        width: $res-text-width
+        margin: 0 auto
+        @extend %slide-text
+
+/* Resume personal info */
+
 .person
 
     &-spec, &-loc
@@ -84,6 +91,5 @@
 
     &-photo
         order: 1
-        height: 100%
-        margin-right: 8%
+        margin-right: $photo-mr
         border-radius: 50%
