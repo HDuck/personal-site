@@ -12,6 +12,12 @@ mixin progressBar(name, val)
     .progress
         span.progress__name= name
         progress.progress__bar_html5(max="100" value=val)= val + "%"
+        - if (name == "Английский")
+            span.languages-desc
+                            | Умею в чтение технической документации,
+                            | составление простых предложений.
+                            | Сложности возникают при выборе правильного времени в заданном контексте.
+                            | Подтягиваю свои знания на Englishdom.com.
 
 mixin otherSkills(skName, skDesc)
     .skill-item

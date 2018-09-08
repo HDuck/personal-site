@@ -233,6 +233,7 @@
 
     &__desc
         position: absolute
+        z-index: 2
         top: $skl-res-item-desc-pos-t
         width: $skl-res-item-desc-w
         padding: $skl-res-item-desc-p
@@ -261,3 +262,31 @@
 
     &:last-child > &__desc
         left: $skl-res-item-desc5-pos-l
+
+/* Resume languages info */
+
+.languages
+    display: flex
+    justify-content: space-around
+    align-items: flex-start
+
+    &-desc
+        width: 100%
+        margin: .4em 0
+        padding: 5px
+        background-color: gray
+
+    & > .progress
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        flex-wrap: wrap
+        align-content: flex-start 
+
+        &:first-child::after
+            content: "#{$lang-res-rus-perc}%"
+            right: $lang-res-rus-perc-pos
+
+        &:last-child::after
+            content: "#{$lang-res-eng-perc}%"
+            right: $lang-res-eng-perc-pos
