@@ -127,9 +127,137 @@
     &-contacts
         display: flex
         justify-content: space-around
+        align-items: center
         width: $det-res-contacts-w
         padding: $det-res-contacts-p
 
     &-birth
         margin: $det-res-birth-m
         text-align: center
+
+/* Resume skills info */
+
+.main-skills
+    @extend %flex-col-cen
+    align-items: flex-start
+    flex-wrap: wrap
+    align-content: space-around
+    height: $skl-res-main-cont-h
+
+.progress
+    position: relative
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    width: $skl-res-prog-w
+    margin: $skl-res-prog-m
+
+    &::after
+        position: absolute
+        color: white
+        top: 5px
+
+    &__name
+        width: $skl-res-prog-name-w
+        padding: $skl-res-prog-name-p
+        text-align: center
+        color: txtColor(yellow)
+        background-color: lighten(gray, 5)
+        border-radius: 5px
+        border-top-left-radius: 14px
+        border-bottom-left-radius: 14px
+
+    &__bar_html5
+        width: $skl-res-prog-bar-5-w
+        height: $skl-res-prog-bar-5-h
+        margin-left: $skl-res-prog-bar-5-ml
+        border: none
+        border-radius: 10px
+        background-color: lighten(green, 10)
+        -webkit-appearance: none
+        -moz-appearance: none
+
+        &::-webkit-progress-bar
+            background-color: lighten(green, 10)
+            border: none
+            border-radius: 10px
+
+        &::-webkit-progress-value
+            background-color: green
+            border: none
+            border-radius: 10px
+
+        &::-moz-progress-bar
+            background-color: green
+            border: none
+            border-radius: 10px
+
+        &::-ms-fill
+            background-color: green
+            border: none
+            border-radius: 10px
+
+    &:first-child::after
+        content: "#{$skl-res-html-perc}%"
+        right: $skl-res-html-perc-pos
+
+    &:nth-child(2)::after
+        content: "#{$skl-res-css-perc}%"
+        right: $skl-res-css-perc-pos
+
+    &:nth-child(3)::after
+        content: "#{$skl-res-js-perc}%"
+        right: $skl-res-js-perc-pos
+
+    &:last-child::after
+        content: "#{$skl-res-jquery-perc}%"
+        right: $skl-res-jquery-perc-pos
+
+.other-skills
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    align-content: flex-start
+    margin-top: $skl-res-oth-cont-mt
+
+.skill-item
+    position: relative
+    margin-right: $skl-res-item-mr
+
+    &__name
+        display: inline-block
+        padding: $skl-res-item-name-p
+        background-color: bgColor(lgray)
+        border-radius: 5px
+
+    &__desc
+        position: absolute
+        top: $skl-res-item-desc-pos-t
+        width: $skl-res-item-desc-w
+        padding: $skl-res-item-desc-p
+        text-align: center
+        background-color: gray
+        border-radius: 50px
+        visibility: hidden
+
+    &:hover &__desc
+        visibility: visible
+
+    &:last-child
+        margin-right: 0
+
+    &:first-child > &__desc
+        left: $skl-res-item-desc1-pos-l
+
+    &:nth-child(2) > &__desc
+        left: $skl-res-item-desc2-pos-l
+
+    &:nth-child(3) > &__desc
+        left: $skl-res-item-desc3-pos-l
+
+    &:nth-child(4) > &__desc
+        left: $skl-res-item-desc4-pos-l
+
+    &:last-child > &__desc
+        left: $skl-res-item-desc5-pos-l

@@ -1,15 +1,18 @@
+// w - for width
+// h - for height
+// m - for margin
+// p - for padding
+// pos - for positioning 
+// trlb - for direction (top, right, left, bottom)
+// hov - for :hover
+
 // Text colors
 $text-colors: (black: black, yellow: yellow)
 
 // Background colors
-$bg-colors: (gray: gray, lgray: lighten(gray, 10), resume: lighten(green, 50))
+$bg-colors: (gray: gray, lgray: lighten(gray, 10), resume: lighten(green, 50), green: green)
 
 // Header vars
-// w - for width
-// m - for margin
-// p - for padding
-// trlb - for direction (top, right, left, bottom)
-// hov - for :hover
 $h-menu-w: 40%
 $h-menu-list-m: 30px 5% 20px 0
 $h-menu-item-m: 0 2% 0 0
@@ -41,3 +44,54 @@ $exp-res-item-w: $res-text-w
 $det-res-contacts-w: 100%
 $det-res-contacts-p: .5em 0
 $det-res-birth-m: .5em 0
+
+// Resume-skills
+
+// Main skills cont
+$skl-res-main-cont-h: 90px
+
+// Progress cont
+$skl-res-prog-w: 400px
+$skl-res-prog-m: .4em 0
+
+// Progress name
+$skl-res-prog-name-w: 100px
+$skl-res-prog-name-p: 5px 20px 5px 10px
+
+// Progress bar html5
+$skl-res-prog-bar-5-w: 290px
+$skl-res-prog-bar-5-h: 20px
+$skl-res-prog-bar-5-ml: -20px
+
+// Percentages from html
+$skl-res-html-perc: 70
+$skl-res-css-perc: 60
+$skl-res-js-perc: 35
+$skl-res-jquery-perc: 30
+
+// Progress bar percentages positioning
+$skl-res-html-perc-pos: $skl-res-prog-bar-5-w * (1 - $skl-res-html-perc / 100) + 5px
+$skl-res-css-perc-pos: $skl-res-prog-bar-5-w * (1 - $skl-res-css-perc / 100) + 5px
+$skl-res-js-perc-pos: $skl-res-prog-bar-5-w * (1 - $skl-res-js-perc / 100) + 5px
+$skl-res-jquery-perc-pos: $skl-res-prog-bar-5-w * (1 - $skl-res-jquery-perc / 100) + 5px
+
+// Other skills cont
+$skl-res-oth-cont-mt: 20px
+
+// Skill-item
+$skl-res-item-mr: 10px
+
+// Skill-item name
+$skl-res-item-name-p: 8px
+
+// Skill-item desc
+$skl-res-item-desc-pos-t: 25px
+$skl-res-item-desc-w: 300px
+$skl-res-item-desc-p: $skl-res-item-name-p
+
+// Skill-item desc positioning
+$skl-res-item-desc1-pos-l: -($skl-res-item-desc-w + 2 * $skl-res-item-name-p - 115px) / 2
+$skl-res-item-desc2-pos-l: -($skl-res-item-desc-w + 2 * $skl-res-item-name-p - 56px) / 2
+$skl-res-item-desc3-pos-l: -($skl-res-item-desc-w + 2 * $skl-res-item-name-p - 68px) / 2
+$skl-res-item-desc4-pos-l: -($skl-res-item-desc-w + 2 * $skl-res-item-name-p - 90px) / 2
+$skl-res-item-desc5-pos-l: -($skl-res-item-desc-w + 2 * $skl-res-item-name-p - 65px) / 2
