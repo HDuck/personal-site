@@ -44,7 +44,7 @@
 .resume
 
     &-slide
-        width: $res-width
+        width: $res-w
         background-color: bgColor(resume)
 
     &-cont
@@ -54,7 +54,7 @@
         align-items: center
 
     &-person, &-profile, &-education, &-experience, &-details, &-skills, &-languages, &-hobbies
-        width: $res-sec-width
+        width: $res-sec-w
 
     &-person
         display: flex
@@ -66,14 +66,29 @@
         height: 200px
 
     &-person &__head
+        width: $per-head-w
         margin-top: 0
         order: 2
+
+    &-education
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        flex-wrap: wrap
+        align-content: flex-start
+
+    &-experience
+        @extend .resume-education
+        justify-content: center
+
+    &-experience &-item
+        width: $exp-res-item-w
 
     &__head
         @extend %thir-head
 
     &__text
-        width: $res-text-width
+        width: $res-text-w
         margin: 0 auto
         @extend %slide-text
 
@@ -92,5 +107,37 @@
 
     &-photo
         order: 1
-        margin-right: $photo-mr
+        margin-right: $per-photo-mr
         border-radius: 50%
+
+/* Resume education info */
+
+.resume-item
+    width: $edu-res-item-w
+    padding: $res-item-p
+    background-color: bgColor(lgray)
+    text-align: center
+
+    &__head
+        margin: 0
+        
+    &__dur
+        display: inline-block
+        margin-bottom: .5em
+
+    & .resume__text
+        width: $res-item-txt-w
+
+/* Resume details info */
+
+.details
+
+    &-contacts
+        @extend .resume-education
+        justify-content: space-around
+        width: $det-res-contacts-w
+        padding: $det-res-contacts-p
+
+    &-birth
+        margin: $det-res-birth-m
+        text-align: center
