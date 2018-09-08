@@ -1,17 +1,13 @@
 /* Main container */
     
 .content
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
+    @extend %flex-col-fs
     align-items: center
 
 /* Greeting slide */
 
 .greet-slide
-    display: flex
-    flex-direction: column
-    justify-content: center
+    @extend %flex-col-cen
     align-items: center
     width: 100%
     height: 100vh
@@ -48,18 +44,14 @@
         background-color: bgColor(resume)
 
     &-cont
-        display: flex
-        flex-direction: column
-        justify-content: flex-start
+        @extend %flex-col-fs
         align-items: center
 
     &-person, &-profile, &-education, &-experience, &-details, &-skills, &-languages, &-hobbies
         width: $res-sec-w
 
     &-person
-        display: flex
-        flex-direction: column
-        justify-content: center
+        @extend %flex-col-cen
         align-items: flex-start
         flex-wrap: wrap
         align-content: center
@@ -133,7 +125,7 @@
 .details
 
     &-contacts
-        @extend .resume-education
+        display: flex
         justify-content: space-around
         width: $det-res-contacts-w
         padding: $det-res-contacts-p
