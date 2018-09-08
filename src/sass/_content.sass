@@ -271,9 +271,9 @@
     align-items: flex-start
 
     &-desc
-        width: 100%
-        margin: .4em 0
-        padding: 5px
+        width: $lang-res-desc-w
+        margin: $lang-res-desc-m
+        padding: $lang-res-desc-p
         background-color: gray
 
     & > .progress
@@ -290,3 +290,17 @@
         &:last-child::after
             content: "#{$lang-res-eng-perc}%"
             right: $lang-res-eng-perc-pos
+
+.hobbies-list
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    padding-left: 0
+
+    &__item
+        @extend .skill-item__name
+        margin-right: $hobb-res-item-mr
+        list-style-type: none
+
+        &:last-child
+            margin-right: 0

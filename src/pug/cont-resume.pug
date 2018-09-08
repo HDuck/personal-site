@@ -76,7 +76,8 @@
     var hobbies = [
         'Видеоигры',
         'Программирование',
-        'Фитнес'
+        'Фитнес',
+        'Музыка'
     ];
 
 article.resume-slide
@@ -131,4 +132,4 @@ article.resume-slide
             h3.resume__head Увлечения
             ul.hobbies-list
                 each item in hobbies
-                    li= item
+                    li.hobbies-list__item= item
