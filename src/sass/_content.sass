@@ -360,3 +360,53 @@
     &__info
         position: absolute
         bottom: $port-proj-btn-pos-b
+
+/* Contacts-slide */
+
+.contacts
+
+    &-slide
+        width: $conts-w
+        background-color: lighten(red, 25)
+
+    &-cont
+        @extend %flex-col-fs
+        align-items: center
+
+.contact
+
+    &-msg
+        width: $conts-msg-w
+        text-align: center
+
+    &-form
+        @extend %flex-col-fs
+        align-items: center
+        width: $conts-form-w
+
+    &-socials
+        display: flex
+        justify-content: space-around
+        align-items: center
+        width: $conts-soc-w
+        margin: $conts-soc-m
+
+
+.form
+
+    &__name, &__email, &__msg, &__label
+        box-sizing: border-box
+        width: 100%
+
+    &__label
+        margin: $conts-form-lab-m
+
+        &:first-child
+            margin-top: 0
+
+    &__msg
+        height: $conts-form-msg-h
+        resize: vertical
+
+    &__submit
+        margin-top: $conts-form-sub-mt

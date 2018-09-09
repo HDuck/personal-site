@@ -16,7 +16,7 @@
 
 section.contacts-slide
     h2.slide__head Контакты
-    .slide__cont
+    .contacts-cont
         p.contact-msg
             | Открыт для предложений о работе, интересных идей,
             | сложных задач и вопросов. Вы можете связаться со мной 
@@ -24,7 +24,7 @@ section.contacts-slide
         form.contact-form(action="#")
             label.form__label(for="name") Как мне к вам обращаться?
             input.form__name(type="text" name="name" id="name")
-            label.form__label(for="email") Обязательно отвечу на почту.
+            label.form__label(for="email") Обязательно отвечу на почту:
             input.form__email(type="email" name="email" id="email")
             label.form__label(for="message") Что желаете поведать?
             textarea.form__msg(name="message" id="message")
