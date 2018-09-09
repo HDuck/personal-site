@@ -304,3 +304,59 @@
 
         &:last-child
             margin-right: 0
+
+/* Portfolio slide */
+
+.tech-list
+    @extend .other-skills
+    width: 100%
+    padding-left: 0
+
+    &__item
+        @extend .skill-item
+        list-style-type: none
+
+    &__link
+        @extend .skill-item__name
+        color: txtColor(yellow)
+        text-decoration: none
+
+.portfolio
+
+    &-slide
+        @extend %flex-col-cen
+        align-items: center
+        width: $port-w
+        background-color: lighten(yellow, 25)
+
+    &-cont
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        flex-wrap: wrap
+        align-content: flex-start
+        width: $port-cont-w
+
+    &-project
+        position: relative
+        @extend %flex-col-fs
+        align-items: center
+        box-sizing: border-box
+        width: $port-proj-w
+        height: $port-proj-h
+        margin: $port-proj-m
+        padding: $port-proj-p
+        background-color: bgColor(lgray)
+
+        &:nth-child(4), &:nth-child(6)
+            margin-right: 0
+
+.project
+
+    &__name
+        margin: $port-proj-name-m
+        text-align: center
+
+    &__info
+        position: absolute
+        bottom: $port-proj-btn-pos-b
