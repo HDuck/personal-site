@@ -5,16 +5,18 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    context: path.resolve(__dirname, 'src'),
+    entry: './index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: './js/main.js'
     },
+    devtool: 'inline-source-map',
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Anatoliy Bobrov',
-            template: './src/pug/main.pug',
+            template: './pug/main.pug',
         }),
         new MiniCssExtractPlugin({
             filename: './css/[name].css',
@@ -39,14 +41,25 @@ module.exports = {
                     "css-loader",
                     "sass-loader"
                 ]
+            },
+            {
+                test: /\.(jpe?g|png|gif)$/i,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]',
+                        publicPath: '../'
+                    }
+                }
             }
         ]
     },
-    watch: true,
+    watch: false,
     watchOptions: {
         ignored: /node_modules/
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        compress: true
     }
 };
