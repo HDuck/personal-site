@@ -51,10 +51,20 @@ module.exports = {
                         publicPath: '../'
                     }
                 }
-            }
+            },
+            {
+                test: /\.ttf$/i,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]',
+                        publicPath: '../'
+                    }
+                }
+            },
         ]
     },
-    watch: false,
+    watch: true,
     watchOptions: {
         ignored: /node_modules/
     },
