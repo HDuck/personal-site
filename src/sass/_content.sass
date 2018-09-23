@@ -3,6 +3,7 @@
 .content
     @extend %flex-col-fs
     align-items: center
+    background-color: bgColor(content)
 
 /* Greeting slide */
 
@@ -11,11 +12,12 @@
     align-items: center
     width: 100%
     height: 100vh
-    background: bgColor(greet) url(../img/laptop@2x.jpg) no-repeat center/cover
+    background: bgColor(greet) url(../img/laptop2@2x.jpg) no-repeat center/cover
 
     & .slide__head
         order: 1
         margin-top: 0
+        color: txtColor(greet)
 
 .slide__head
     @extend %sec-head
@@ -26,14 +28,16 @@
         margin: 0
         @extend %firs-head
         order: 2
+        color: txtColor(greet)
 
         &::before
             content: "Я - "
     
     &-text
         order: 3
-        @extend %slide-text
+        @extend %main-text
         text-align: center
+        color: txtColor(greet)
 
 /* Resume slide */
 
@@ -82,14 +86,14 @@
     &__text
         width: $res-text-w
         margin: 0 auto
-        @extend %slide-text
+        @extend %main-text
 
 /* Resume personal info */
 
 .person
 
     &-spec, &-loc
-        @extend %slide-text
+        @extend %main-text
 
     &-spec
         order: 3
