@@ -12,22 +12,29 @@ $deepspirit: (darkOrange: #ef6817, black: #21201f, gray: #727271, darkGray: #5f6
 $goldbold: (black: #252525, lightGray: #d5d5d3, white: #ffffff, lightBlack: #444444, gold: #fdd947)
 $orangeblossom: (almostWhite: #fbf9fb, lightGray: #e3e1e3, darkGray: #666564, semiBlack: #343239, redOrange: #f03d33)
 
+// Colors for real site parts (primrose)
+$bg-colors: (content: #191919, greet: #191919, resume: #5b5553, portfolio: #5b5553, contacts: #5b5553, btn: #ea3057, educAndExpItems: #e5e5e5, skillHint: #e5e5e5)
+
 // Text colors
 $text-colors: (black: black, yellow: yellow)
 
 // Background colors
-$bg-colors: (greet: #303030, gray: gray, lgray: lighten(gray, 10), resume: lighten(green, 50), green: green)
+
+// Text
+$bodytxt: 25px
 
 // Header vars
 $h-menu-w: 40%
 $h-menu-list-m: 30px 5% 20px 0
 $h-menu-item-m: 0 2% 0 0
-$h-menu-link-p: 10px 25px
-$h-menu-link-pb_hov: 8px
+$h-menu-link-ptb: 12px
+$h-menu-link-plr: 25px
+$h-menu-link-p: $h-menu-link-ptb $h-menu-link-plr
+$h-menu-link-line_hov: 4px
+$h-menu-link-line-pos-b_hov: $h-menu-link-ptb - $h-menu-link-line_hov - 2px
 
 // Container vars
-$c-slide-head-mb: .5em
-$c-slide-head-mt: $c-slide-head-mb * 2
+$c-slide-head-m: 15px 0
 
 // Resume slide
 $res-w: 75%

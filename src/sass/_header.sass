@@ -3,12 +3,11 @@
 // TODO: Add normal color scheme, transitions, some awesome animation
 
 .header
-    position: fixed
+    position: absolute
     top: 0
     left: 0
     right: 0
     z-index: 2
-    background-color: transparent
 
 .menu
     display: flex
@@ -22,17 +21,31 @@
         width: $h-menu-w
         margin: $h-menu-list-m
         padding-left: 0
+        background: transparent radial-gradient(circle, bgColor(content) 0%, bgColor(content) 60%, transparent 100%)
 
         &__item
             display: inline-block
             list-style-type: none
 
         &__link
+            position: relative
             padding: $h-menu-link-p
-            text-decoration: none
-            color: txtColor(black)
-            background-color: bgColor(lgray)
+            @extend %menu-links
+            color: lighten(bgColor(content), 20)
+
+            &::after
+                content: ""
+                position: absolute
+                bottom: $h-menu-link-line-pos-b_hov
+                left: $h-menu-link-plr
+                right: $h-menu-link-plr
+                display: block
+                height: $h-menu-link-line_hov
+                visibility: hidden
 
             &:hover
-                padding-bottom: $h-menu-link-pb_hov
-                border-bottom: 2px solid bgColor(gray)
+                color: bgColor(btn)
+
+                &::after
+                    background-image: linear-gradient(to right, bgColor(btn) 0%, lighten(bgColor(btn), 15) 50%, bgColor(btn) 100%)
+                    visibility: visible
