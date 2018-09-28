@@ -1,43 +1,50 @@
 /* Main container */
     
 .content
-    @extend %flex-col-fs
-    align-items: center
+    @extend %flex-col-fs-cen
     background-color: bgColor(content)
 
-/* Greeting slide */
+/* Slides in common */
 
-.greet-slide
-    @extend %flex-col-cen
-    align-items: center
-    width: 100%
-    height: 100vh
-    background: bgColor(greet) url(../img/laptop2@2x.jpg) no-repeat center/cover
-
-    & .slide__head
-        order: 1
-        margin-top: 0
-        color: txtColor(greet)
+.greet-slide, .resume-slide, .portfolio-slide, .contacts-slide
+    @extend %flex-col-cen-cen
 
 .slide__head
     @extend %sec-head
 
+.resume-cont, .contacts-cont
+    @extend %flex-col-fs-cen
+
+/* Greeting slide */
+
+.greet-slide
+    width: 100%
+    height: 100vh
+    background: bgColor(content) url(../img/laptop2@2x.jpg) no-repeat center/cover fixed
+
+    & .slide__head
+        order: 1
+        margin: 0 0 15px
+        color: txtColor(greet)
+        letter-spacing: 1.5px
+
 .greeting
+
+    &-whoami, &-text
+        color: txtColor(greet)
 
     &-whoami
         margin: 0
         @extend %firs-head
         order: 2
-        color: txtColor(greet)
 
         &::before
             content: "Я - "
     
     &-text
-        order: 3
         @extend %main-text
         text-align: center
-        color: txtColor(greet)
+        order: 3
 
 /* Resume slide */
 
@@ -47,22 +54,22 @@
         width: $res-w
         background-color: bgColor(resume)
 
-    &-cont
-        @extend %flex-col-fs
-        align-items: center
-
     &-person, &-profile, &-education, &-experience, &-details, &-skills, &-languages, &-hobbies
         width: $res-sec-w
+        padding: $res-item-p
 
     &-person
-        @extend %flex-col-cen
+        @extend %flex-col-cen-cen
         align-items: flex-start
         flex-wrap: wrap
-        align-content: center
-        height: 200px
+        align-content: space-between
+        width: $res-per-w
+        height: $res-per-h
+        background-image: linear-gradient(to right, bgColor(btn) 16%, bgColor(resumeItem) 18%)
+        border-radius: 120px 40px 40px 120px
 
     &-person &__head
-        width: $per-head-w
+        width: auto
         margin-top: 0
         order: 2
 
@@ -93,24 +100,25 @@
 .person
 
     &-spec, &-loc
-        @extend %main-text
+        margin: 0
 
     &-spec
         order: 3
+        @extend %main-text
 
     &-loc
+        @extend %sub-text
         order: 4
 
     &-photo
         order: 1
-        margin-right: $per-photo-mr
         border-radius: 50%
 
 /* Resume education info */
 
 .resume-item
-    width: $edu-res-item-w
-    padding: $res-item-p
+    width: $res-edu-item-w
+    padding: $res-edu-item-p
     background-color: bgColor(lgray)
     text-align: center
 
@@ -122,7 +130,7 @@
         margin-bottom: .5em
 
     & .resume__text
-        width: $res-item-txt-w
+        width: $res-edu-item-txt-w
 
 /* Resume details info */
 
@@ -142,7 +150,7 @@
 /* Resume skills info */
 
 .main-skills
-    @extend %flex-col-cen
+    @extend %flex-col-cen-cen
     align-items: flex-start
     flex-wrap: wrap
     align-content: space-around
@@ -328,8 +336,6 @@
 .portfolio
 
     &-slide
-        @extend %flex-col-cen
-        align-items: center
         width: $port-w
         background-color: lighten(yellow, 25)
 
@@ -343,8 +349,7 @@
 
     &-project
         position: relative
-        @extend %flex-col-fs
-        align-items: center
+        @extend %flex-col-fs-cen
         box-sizing: border-box
         width: $port-proj-w
         height: $port-proj-h
@@ -373,10 +378,6 @@
         width: $conts-w
         background-color: lighten(red, 25)
 
-    &-cont
-        @extend %flex-col-fs
-        align-items: center
-
 .contact
 
     &-msg
@@ -384,8 +385,7 @@
         text-align: center
 
     &-form
-        @extend %flex-col-fs
-        align-items: center
+        @extend %flex-col-fs-cen
         width: $conts-form-w
 
     &-socials
