@@ -21,7 +21,7 @@
         width: $h-menu-w
         margin: $h-menu-list-m
         padding-left: 0
-        background: transparent radial-gradient(circle, bgColor(content) 0%, bgColor(content) 60%, transparent 100%)
+        background-image: radial-gradient(circle, bgColor(content) 0%, bgColor(content) 60%, transparent 100%)
 
         &__item
             display: inline-block
@@ -31,7 +31,6 @@
             position: relative
             padding: $h-menu-link-p
             @extend %menu-links
-            color: lighten(bgColor(content), 20)
 
             &::after
                 content: ""
@@ -44,8 +43,8 @@
                 visibility: hidden
 
             &:hover
-                color: bgColor(btn)
+                color: txtColor(menu_hov)
 
                 &::after
-                    background-image: linear-gradient(to right, bgColor(btn) 0%, lighten(bgColor(btn), 15) 50%, bgColor(btn) 100%)
+                    background-image: linear-gradient(to right, txtColor(menu_hov) 0%, lighten(txtColor(menu_hov), 15) 50%, txtColor(menu_hov) 100%)
                     visibility: visible
